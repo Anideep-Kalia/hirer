@@ -12,8 +12,8 @@ const Home = () => {
           id="hero-heading"
           className="z-30 text-center text-7xl leading-[5.5rem] text-stone-900"
         >
-          Direct <span className="text-secondary-600">Hiring</span> App for
-          <span className="text-secondary-600"> Startup</span> <br />{" "}
+          Direct <span className="text-secondary-600" style={{color:"#535889"}}>Hiring</span> App for
+          <span className="text-secondary-600" style={{color:"#535889"}}> Startup</span> <br />{" "}
           <span className="line-through">Ecosystem</span>.
         </h1>
         <p className="text-center cursor-default leading-7 text-lg z-30 font-light text-gray-700 my-10">
@@ -39,16 +39,6 @@ const Home = () => {
             className="absolute animate-pulse -top-8 -right-8"
           />
         </div>
-        <img
-          src={Waves}
-          alt="Waves"
-          className="fixed  z-30  bottom-0 w-full waves-bottom"
-        />
-        <img
-          src={Waves}
-          alt="Waves"
-          className="fixed  z-30 rotate-180  top-0 w-full waves-top"
-        />
         <img
           src={recruiter}
           alt="img"
