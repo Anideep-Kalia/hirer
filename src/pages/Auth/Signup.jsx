@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Spinner, Navbar } from "../../components";
+import { Spinner, Navbar, Recruiter } from "../../components";
 import { AuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,9 +7,12 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { web, business, beam } from "../../assets";
+import { Button } from "@mui/material";
 
 const Signup = () => {
   const [role, setRole] = useState("Recruiter");
+  const [checkbox1, setCheckbox1] = useState(false);
+  const [checkbox2, setCheckbox2] = useState(false);
   const [gender, setGender] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
   const [dob, setDob] = useState("");
@@ -72,11 +75,30 @@ const Signup = () => {
     }
   };
 
-  const handleRole = (e) => {
-    if (role == e.target.id) {
-      return;
-    }
-    setRole(e.target.id);
+  const handleCheckbox1Change = () => {
+    setCheckbox1(!checkbox1);
+  };
+
+  const handleCheckbox2Change = () => {
+    setCheckbox2(!checkbox2);
+  };
+  const handleRole1 = (e) => {
+    setRole("Recruiter");
+    console.log("working")
+    setEmail("");
+    setFullName("");
+    setPassword("");
+    setPhoneNumber("");
+    setDesignation("");
+    setDob("");
+    setExperienceLevel("");
+    setGender("");
+    setCompany("");
+  };
+  const handleRole2 = (e) => {
+    console.log("working")
+    setRole("Applicant");
+    
     setEmail("");
     setFullName("");
     setPassword("");
@@ -111,15 +133,15 @@ const Signup = () => {
         alt="beam"
         className="fixed top-0 left-0 opacity-60 z-0 h-screen w-full"
       />
-      <div className="flex h-screen justify-between items-center px-10">
-        <div className="px-4 py-6 ml-16 w-128 rounded-lg shadow-material z-30 form-container">
-          <div className="flex w-full items-center justify-evenly mb-5">
+      <div className="flex h-screen justify-between items-center px-40">
+        <div className=" px-4 py-6 ml-16 w-128 rounded-lg shadow-material z-30 form-container">
+          {/* <div className="flex w-full items-center justify-evenly mb-5"> */}
             <div className="flex items-center space-x-1">
               <input
-                type="radio"
-                checked={role === "Recruiter"}
+                type="checkbox"
                 id="Recruiter"
-                onClick={(e) => handleRole(e)}
+                onChange={handleRole1}
+                checked={role === "Recruiter"}
                 name="role"
               />
               <label htmlFor="recruiter" className="text-xl font-medium">
@@ -128,17 +150,17 @@ const Signup = () => {
             </div>
             <div className="flex items-center space-x-1">
               <input
-                type="radio"
+                type="checkbox"
+                onChange={handleRole2}
+                checked={role === "Applicant"}
                 id="Applicant"
                 name="role"
-                onClick={(e) => handleRole(e)}
-                checked={role === "Applicant"}
               />
               <label htmlFor="applicant" className="text-xl font-medium">
                 Register as applicant
               </label>
             </div>
-          </div>
+          {/* </div> */}
           <form onSubmit={handleSubmit}>
             <div className="input-container mb-5">
               <input
