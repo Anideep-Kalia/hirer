@@ -30,7 +30,7 @@ const Home = () => {
             className="group relative inline-flex border border-secondary-600 focus:outline-none lg:inline-flex"
           >
             <span className="w-full inline-flex items-center justify-center self-stretch px-2 py-1 text-2xl text-secondary-600 text-center font-semibold  bg-white ring-1 ring-secondary-600 ring-offset-1 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">
-              Join Hirely <IoArrowForwardCircle className="h-8 w-8 ml-1" />
+              Join HireME <IoArrowForwardCircle className="h-8 w-8 ml-1" />
             </span>
           </Link>
           <img
@@ -42,12 +42,12 @@ const Home = () => {
         <img
           src={recruiter}
           alt="img"
-          className="fixed top-[25rem] transition-all duration-300 ease-in-out left-10 recruiter hover:scale-105 hover:-rotate-1"
+          className="fixed top-[25rem] transition-all duration-300 ease-in-out left-10 recruiter"
         />
         <img
           src={candidate}
           alt="img"
-          className="fixed top-[25rem] transition-all duration-300 ease-in-out right-10 candidate hover:scale-105 hover:rotate-1"
+          className="fixed top-[25rem] transition-all duration-300 ease-in-out right-10 candidate"
         />
       </div>
     </>

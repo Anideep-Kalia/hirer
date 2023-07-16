@@ -28,7 +28,7 @@ const NavigationBar = () => {
             <h1 className="text-4xl logo text-secondary-600">Hirely</h1>
           ) : (
             <Link to="/" className="text-4xl logo text-secondary-600">
-              Hirely
+              HireME
             </Link>
           )}
         </div>
