@@ -13,6 +13,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ApplicationCard = ({ applicantId, applicationStatus, job }) => {
+  
   const [applicantDetails, setApplicantDetails] = useState(null);
 
   const [viewMoreModal, setViewMoreModal] = useState(false);
