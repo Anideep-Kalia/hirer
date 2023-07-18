@@ -25,7 +25,7 @@ const NavigationBar = () => {
       >
         <div className="left cursor-default">
           {currentUser ? (
-            <h1 className="text-4xl logo text-secondary-600">Hirely</h1>
+            <h1 className="text-4xl logo text-secondary-600">HireME</h1>
           ) : (
             <Link to="/" className="text-4xl logo text-secondary-600">
               HireME
