@@ -34,12 +34,12 @@ body {
 ::-moz-selection {
   /* Code for Firefox */
   color: black;
-  background: #fb7185;
+  background: #3399ff;
 }
 
 ::selection {
   color: black;
-  background: #fb7185;
+  background: #3399ff;
 }
 
 .sk-chase {
@@ -63,7 +63,7 @@ body {
   display: block;
   width: 25%;
   height: 25%;
-  background-color: #f43f5f;
+  background-color: #007fff;
   border-radius: 100%;
   animation: sk-chase-dot-before 1s infinite ease-in-out 0s;
 }
@@ -171,7 +171,7 @@ input[type="radio"]:checked:after {
   top: -4px;
   left: -1px;
   position: relative;
-  background-color: #e11d48;
+  background-color: #0066cc;
   content: "";
   display: inline-block;
   visibility: visible;
@@ -189,7 +189,7 @@ input[type="radio"]:checked:after {
   filter: blur(100px);
   background: radial-gradient(
     circle at 50% 50%,
-    rgb(225, 29, 72),
+    #0066cc,
     rgba(76, 0, 255, 0)
   );
   opacity: 0.4;
@@ -210,7 +210,7 @@ input[type="radio"]:checked:after {
   filter: blur(100px);
   background: radial-gradient(
     circle at 50% 50%,
-    rgb(225, 29, 72),
+    #013e77,
     rgba(76, 0, 255, 0)
   );
   opacity: 0.4;
@@ -253,7 +253,7 @@ li:first-child {
   right: 0;
   width: 0;
   height: 2px;
-  background-color: #f43f5e;
+  background-color: #6da6fc;
   transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 

@@ -3,12 +3,13 @@ import firebase from "firebase";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBvoH0MO-4kdvgQxR5_VydnhbhQo6FYwSc",
-  authDomain: "hirer-50ee8.firebaseapp.com",
-  projectId: "hirer-50ee8",
-  storageBucket: "hirer-50ee8.appspot.com",
-  messagingSenderId: "413829345495",
-  appId: "1:413829345495:web:415106725f12913b584092"
+  apiKey: "AIzaSyDPcHmUdmX8HKiJURJxlRI0Ic8nXzTMgZI",
+  authDomain: "mlh-hack-5ffd1.firebaseapp.com",
+  projectId: "mlh-hack-5ffd1",
+  storageBucket: "mlh-hack-5ffd1.appspot.com",
+  messagingSenderId: "260912001763",
+  appId: "1:260912001763:web:41f1d4eca3ba4d1739cbd6",
+  measurementId: "G-C4BW4KVGKY"
 };
 
 // Initialize Firebase

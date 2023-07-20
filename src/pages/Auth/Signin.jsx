@@ -32,11 +32,6 @@ const Signup = () => {
     <>
       <Navbar />
       <div id="login-container" className="absolute inset-0"></div>
-      <img
-        src={beam}
-        alt="beam"
-        className="fixed top-0 left-0 opacity-60 z-0 h-screen w-full"
-      />
       <div className="flex h-screen justify-between px-10 items-center z-30">
         <div className="px-8 py-12 ml-16 w-[28rem] z-20 rounded-lg shadow-material form-container">
           <form onSubmit={handleSubmit}>
@@ -106,7 +101,7 @@ const Signup = () => {
               disabled={!email || !password}
               className="disabled:cursor-not-allowed disabled:hover:bg-transparent border-secondary-600 border-2 flex justify-center items-center text-center text-secondary-600 w-full px-2 py-1 font-medium text-xl mt-4  transition-colors duration-300 ease-in-out  hover:bg-secondary-50"
             >
-              <MdDelete className="mr-1 h-5 w-5" fill="#F43F5F" />
+              <MdDelete className="mr-1 h-5 w-5" fill="#003366" />
               Clear
             </button>
             <p className="text-center text-base mt-4">
