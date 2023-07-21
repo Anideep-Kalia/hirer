@@ -10,12 +10,8 @@ import { web, business, beam } from "../../assets";
 import { Button } from "@mui/material";
 
 const Signup = () => {
-  const [role, setRole] = useState("Recruiter");
-  const [checkbox1, setCheckbox1] = useState(false);
-  const [checkbox2, setCheckbox2] = useState(false);
-  const [gender, setGender] = useState("");
+  const [role, setRole] = useState("Mentor");
   const [experienceLevel, setExperienceLevel] = useState("");
-  const [dob, setDob] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [fullName, setFullName] = useState("");
   const [company, setCompany] = useState("");
@@ -26,26 +22,23 @@ const Signup = () => {
   const { signup, isFetching, isLoading } = useContext(AuthContext);
 
   const isDisabled =
-    role === "Recruiter"
+    role === "Mentor"
       ? isLoading ||
         !email ||
         !password ||
         !company ||
-        !designation ||
         !phoneNumber ||
         !fullName
       : isLoading ||
         !email ||
         !password ||
-        !experienceLevel ||
-        !gender ||
+        !experienceLevel||
         !phoneNumber ||
-        !fullName ||
-        !dob;
+        !fullName;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (role === "Recruiter") {
+    if (role === "Mentor") {
       const res = await signup(email, password, {
         role,
         fullName,
@@ -61,9 +54,7 @@ const Signup = () => {
       const res = await signup(email, password, {
         role,
         fullName,
-        gender,
         experienceLevel,
-        dob,
         phoneNumber,
         profilePhoto: "",
         about: "",
@@ -75,28 +66,19 @@ const Signup = () => {
     }
   };
 
-  const handleCheckbox1Change = () => {
-    setCheckbox1(!checkbox1);
-  };
-
-  const handleCheckbox2Change = () => {
-    setCheckbox2(!checkbox2);
-  };
   const handleRole1 = (e) => {
-    setRole("Recruiter");
-    console.log("working")
+    setRole("Mentor");
+    console.log("mentor")
     setEmail("");
     setFullName("");
     setPassword("");
     setPhoneNumber("");
     setDesignation("");
-    setDob("");
     setExperienceLevel("");
-    setGender("");
     setCompany("");
   };
   const handleRole2 = (e) => {
-    console.log("working")
+    console.log("applicant")
     setRole("Applicant");
     
     setEmail("");
@@ -104,9 +86,7 @@ const Signup = () => {
     setPassword("");
     setPhoneNumber("");
     setDesignation("");
-    setDob("");
     setExperienceLevel("");
-    setGender("");
     setCompany("");
   };
 
@@ -116,9 +96,7 @@ const Signup = () => {
     setPassword("");
     setPhoneNumber("");
     setDesignation("");
-    setDob("");
     setExperienceLevel("");
-    setGender("");
     setCompany("");
   };
 
@@ -128,24 +106,24 @@ const Signup = () => {
     <>
       <Navbar />
       <div id="signup-container" className="absolute inset-0"></div>
-      <img
+      {/* <img
         src={beam}
         alt="beam"
         className="fixed top-0 left-0 opacity-60 z-0 h-screen w-full"
-      />
+      /> */}
       <div className="flex h-screen justify-between items-center px-40">
         <div className=" px-4 py-6 ml-16 w-128 rounded-lg shadow-material z-30 form-container">
           {/* <div className="flex w-full items-center justify-evenly mb-5"> */}
             <div className="flex items-center space-x-1">
               <input
                 type="checkbox"
-                id="Recruiter"
+                id="Mentor"
                 onChange={handleRole1}
-                checked={role === "Recruiter"}
+                checked={role === "Mentor"}
                 name="role"
               />
-              <label htmlFor="recruiter" className="text-xl font-medium">
-                Register as recruiter
+              <label htmlFor="Mentor" className="text-xl font-medium">
+                Register as Mentor
               </label>
             </div>
             <div className="flex items-center space-x-1">
@@ -173,7 +151,7 @@ const Signup = () => {
               />
             </div>
             <div className="input-container mb-5">
-              {role === "Recruiter" ? (
+              {role === "Mentor" ? (
                 <input
                   type="text"
                   className="focus:outline-secondary-400  border-[1px] border-gray-200 p-2 w-full rounded-md"
@@ -193,46 +171,8 @@ const Signup = () => {
                 />
               )}
             </div>
-            <div className="input-container mb-5">
-              {role === "Recruiter" ? (
-                <input
-                  type="text"
-                  className="focus:outline-secondary-400 border-[1px] border-gray-200 p-2 w-full rounded-md"
-                  value={designation}
-                  onChange={(e) => setDesignation(e.target.value)}
-                  placeholder="Designation"
-                  required
-                />
-              ) : (
-                <select
-                  name="gender"
-                  id="gender"
-                  className="focus:outline-secondary-400 border-[1px] border-gray-200 p-2 w-full rounded-md"
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
-                >
-                  <option value="" selected disabled hidden>
-                    Gender
-                  </option>
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
-                </select>
-              )}
-            </div>
-            {role === "Applicant" && (
-              <div className="input-container mb-5">
-                <input
-                  type="date"
-                  className="focus:outline-secondary-400 border-[1px] border-gray-200 p-2 w-full rounded-md"
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)}
-                  placeholder="Date of birth"
-                  required
-                />
-              </div>
-            )}
-            <div className="input-container mb-5">
+            
+             <div className="input-container mb-5">
               <input
                 type="tel"
                 maxLength={10}
@@ -322,7 +262,7 @@ const Signup = () => {
           </form>
         </div>
         <img
-          src={role === "Recruiter" ? web : business}
+          src={role === "Mentor" ? web : business}
           alt="img"
           className="w-[40rem] h-128 z-30"
         />

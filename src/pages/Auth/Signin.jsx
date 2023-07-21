@@ -34,7 +34,9 @@ const Signup = () => {
       <div id="login-container" className="absolute inset-0"></div>
       <div className="flex h-screen justify-between px-10 items-center z-30">
         <div className="px-8 py-12 ml-16 w-[28rem] z-20 rounded-lg shadow-material form-container">
+
           <form onSubmit={handleSubmit}>
+            
             <div className="input-container mb-5">
               <input
                 type="email"

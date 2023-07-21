@@ -28,7 +28,8 @@ export const AuthProvider = ({ children }) => {
         email,
         password
       );
-      if (userInfo.role === "Recruiter") {
+      setCurrentUser(userInfo.role);
+      if (userInfo.role === "Mentor") {
         await db.collection("users").doc(response.user.uid).set({
           userId: response.user.uid,
           role: userInfo.role,

@@ -8,7 +8,7 @@ const Dashboard = () => {
   return (
     <>
       <Navbar />
-      {currentUser && currentUser.role === "Recruiter" ? (
+      {currentUser && currentUser.role === "Mentor" ? (
         <Recruiter />
       ) : (
         <Applicant />
